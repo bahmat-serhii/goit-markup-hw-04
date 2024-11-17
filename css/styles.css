@@ -188,6 +188,12 @@ img {
 }
 .hero-image {
   background: #2e2f42;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/background/people-office\ 1.jpg);
 }
 a {
   text-decoration: none;
