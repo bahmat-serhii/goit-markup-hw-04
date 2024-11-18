@@ -269,9 +269,6 @@ main {
 .social-list {
   width: 40px;
   height: 40px;
-  background-color: #4d5ae5;
-  padding: 12px;
-  border-radius: 50%;
 }
 .social-list-folow {
   justify-content: center;
