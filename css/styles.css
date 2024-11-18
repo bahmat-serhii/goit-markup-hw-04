@@ -65,6 +65,8 @@ img {
   width: 1440px;
   height: 72px;
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .link-logo {
   font-weight: 700;
@@ -139,33 +141,7 @@ img {
   color: #404bbf;
   font-family: "Roboto", sans-serif;
 }
-.tel {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-  font-family: "Roboto", sans-serif;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.tel:hover {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #404bbf;
-  font-family: "Roboto", sans-serif;
-}
-.tel:focus {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #404bbf;
-  font-family: "Roboto", sans-serif;
-}
+
 .cont {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -187,18 +163,20 @@ img {
 }
 
 .effect {
-  width: 1440px;
   height: 600px;
   padding: 188px 0;
 }
 .hero-image {
+  background-size: cover;
+  background-position: center;
+  max-width: 1440px;
+  background-repeat: no-repeat;
   background: #2e2f42;
   background-image: linear-gradient(
-      to bottom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/background/people-office\ 1.jpg);
+    url(/images/people-office.jpg);
 }
 a {
   text-decoration: none;
@@ -242,7 +220,20 @@ main {
   text-align: center;
   margin-bottom: 8px;
 }
+.adv-text-team {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  margin-bottom: 8px;
+}
 .adv-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   width: 264px;
@@ -250,6 +241,7 @@ main {
   background: #f4f4fd;
   background-position: 0 0;
   padding: 24px 100px;
+  margin-bottom: 8px;
 }
 .our-team {
   font-weight: 700;
@@ -275,7 +267,7 @@ main {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .personal {
-  margin: 32px 16px;
+  padding: 32px 0;
 }
 .social-list {
   width: 40px;
@@ -283,6 +275,22 @@ main {
   background-color: #4d5ae5;
   padding: 12px;
   border-radius: 50%;
+}
+.social-list-folow {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(#4d5ae5);
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-list-folow:hover {
+  background-color: #404bbf;
+}
+.social-list-folow:focus {
+  background-color: #404bbf;
 }
 .social {
   display: flex;
@@ -307,6 +315,17 @@ main {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.link-studio {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #404bbf;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
 .link:hover {
   font-weight: 500;
   font-size: 16px;
@@ -315,12 +334,16 @@ main {
   color: #404bbf;
   font-family: "Roboto", sans-serif;
 }
-.link:hover::after {
+.link-studio::after {
   border-radius: 2px;
   width: 48px;
   height: 4px;
   background: #404bbf;
   content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
 }
 .link:focus {
   font-weight: 500;
@@ -348,9 +371,7 @@ ul {
   margin-bottom: 48px;
 }
 .btn {
-  transition-property: background;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -454,10 +475,10 @@ ul {
   overflow: hidden;
 }
 .over:hover .overlay {
-  transform: translatey(0);
+  transform: translateY(0%);
 }
 .overlay {
-  padding: 40px 32px 168px 32px;
+  padding: 40px 32px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -472,7 +493,7 @@ ul {
   background-color: #4d5ae5;
 
   transform: translatey(100%);
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .foot {
   background: #2e2f42;
@@ -482,9 +503,12 @@ ul {
 }
 .footer {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: flex-start;
   flex-direction: row;
+}
+.footer-cont {
+  margin-right: 120px;
 }
 .text-foot {
   font-weight: 400;
@@ -533,6 +557,7 @@ ul {
   display: inline-block;
   background-repeat: no-repeat;
   background-image: url(sprite.svg);
+  fill: var(#f4f4fd);
 }
 .icon-antenna {
   width: 32px;
