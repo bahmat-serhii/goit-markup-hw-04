@@ -571,7 +571,7 @@ ul {
 .icon {
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../images/icon/icons.svg);
+  background-image: url(../images/icons.svg);
   --fill: #f4f4fd;
   fill: var(--fill);
 }
